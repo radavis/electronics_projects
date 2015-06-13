@@ -1,0 +1,7 @@
+<div class="small-12 columns">
+  <% flash.each do |type, message| %>
+    <div class="flash flash-<%= type %>">
+      <%= message %>
+    </div>
+  <% end %>
+</div>
