@@ -11,16 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150613171228) do
+ActiveRecord::Schema.define(version: 20150614191044) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "parts", force: :cascade do |t|
+    t.string   "part_number",   null: false
+    t.string   "name",          null: false
+    t.text     "description"
+    t.string   "datasheet_url"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "project_parts", force: :cascade do |t|
+    t.integer  "project_id", null: false
+    t.integer  "part_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "projects", force: :cascade do |t|
     t.string   "name",        null: false
-    t.string   "description", null: false
+    t.text     "description", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
+
+  add_index "projects", ["name"], name: "index_projects_on_name", unique: true, using: :btree
 
 end

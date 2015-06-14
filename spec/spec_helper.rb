@@ -19,4 +19,13 @@ RSpec.configure do |config|
   # config.profile_examples = 10
   config.order = :random
   Kernel.srand config.seed
+
+  config.backtrace_exclusion_patterns = [
+    /\/lib\d*\/ruby\//,
+    /org\/jruby\//,
+    /bin\//,
+    /gems/,
+    /spec\/spec_helper.rb/,
+    /lib\/rspec\/(core|expectations|matchers|mocks)/
+  ]
 end

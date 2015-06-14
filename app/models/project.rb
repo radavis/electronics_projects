@@ -1,4 +1,8 @@
 class Project < ActiveRecord::Base
-  validate :name, presence: true
-  validate :description, presence: true
+  has_many :project_parts
+  has_many :parts, through: :project_parts
+
+  validates :name, presence: true
+  validates :name, uniqueness: true
+  validates :description, presence: true
 end

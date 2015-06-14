@@ -4,9 +4,9 @@ class ProjectsController < ApplicationController
   end
 
   def create
-    @project = Project.new(project_params)
-    if @project.save
-      redirect_to @project, notice: "New Project Added."
+    project = Project.new(project_params)
+    if project.save
+      redirect_to project, notice: "New Project Added."
     else
       render :new
     end

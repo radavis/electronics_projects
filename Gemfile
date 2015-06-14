@@ -11,7 +11,7 @@ gem "foundation-rails"
 
 group :development, :test do
   gem "capybara"
-  gem "factory_girl_rails"
+  gem "factory_girl_rails", "~> 4.0"
   gem "fuubar"
   gem "rspec-rails", "~> 3.0"
   gem "pry-rails"
