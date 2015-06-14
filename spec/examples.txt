@@ -1,4 +1,4 @@
 example_id                            | status | run_time        |
 ------------------------------------- | ------ | --------------- |
-./spec/features/parts_spec.rb[1:1]    | passed | 0.08161 seconds |
-./spec/features/projects_spec.rb[1:1] | passed | 0.29801 seconds |
+./spec/features/parts_spec.rb[1:1]    | passed | 0.44015 seconds |
+./spec/features/projects_spec.rb[1:1] | passed | 0.03805 seconds |

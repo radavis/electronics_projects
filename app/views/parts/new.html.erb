@@ -1,15 +1,44 @@
 <%= form_for [@project, @part] do |f| %>
-  <%= f.label :part_number %>
-  <%= f.text_field :part_number %><br />
+  <fieldset>
+    <legend>Add a New Part</legend>
 
-  <%= f.label :name %>
-  <%= f.text_field :name %><br />
+    <div class="row collapse">
+      <div class="small-3 columns">
+        <%= f.label :part_number, class: :prefix %>
+      </div>
+      <div class="small-9 columns">
+        <%= f.text_field :part_number %>
+      </div>
+    </div>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %><br />
+    <div class="row collapse">
+      <div class="small-3 columns">
+        <%= f.label :name, class: :prefix %>
+      </div>
+      <div class="small-9 columns">
+        <%= f.text_field :name %>
+      </div>
+    </div>
 
-  <%= f.label :datasheet_url, "Datasheet URL" %>
-  <%= f.text_field :datasheet_url %><br />
+    <div class="row collapse">
+      <div class="small-3 columns">
+        <%= f.label :description, class: :prefix %>
+      </div>
+      <div class="small-9 columns">
+        <%= f.text_area :description %>
+      </div>
+    </div>
 
-  <%= f.submit "Add" %>
+    <div class="row collapse">
+      <div class="small-3 columns">
+        <%= f.label :datasheet_url, "Datasheet URL", class: :prefix %>
+      </div>
+      <div class="small-6 columns">
+        <%= f.text_field :datasheet_url %>
+      </div>
+      <div class="small-3 columns">
+        <%= f.submit "Add", class: "button, postfix" %>
+      </div>
+    </div>
+  </fieldset>
 <% end %>

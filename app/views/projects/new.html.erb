@@ -1,9 +1,35 @@
 <%= form_for @project do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %><br />
+  <fieldset>
+    <legend>Add a New Project</legend>
 
-  <%= f.label :description %>
-  <%= f.text_area :description %><br />
+    <div class="row collapse">
+      <div class="small-3 columns">
+        <%= f.label :name, class: :prefix %>
+      </div>
+      <div class="small-9 columns">
+        <%= f.text_field :name %>
+      </div>
+    </div>
 
-  <%= f.submit "Add" %>
+    <div class="row collapse">
+      <div class="small-3 columns">
+        <%= f.label :description, class: :prefix %>
+      </div>
+      <div class="small-9 columns">
+        <%= f.text_area :description %>
+      </div>
+    </div>
+
+    <div class="row collapse">
+      <div class="small-3 columns">
+        <%= f.label :image_url, "Image URL", class: :prefix %>
+      </div>
+      <div class="small-6 columns">
+        <%= f.text_field :image_url %>
+      </div>
+      <div class="small-3 columns">
+        <%= f.submit "Add", class: "button postfix" %>
+      </div>
+    </div>
+  </fieldset>
 <% end %>
