@@ -1,5 +1,11 @@
 <h2><%= @project.name %></h2>
-
 <p><%= @project.description %></h2>
+
+<h3>Bill of Material</h3>
+<% if @project.parts.present? %>
+  <%= render template: "parts/index", locals: { parts: @project.parts } %>
+<% else %>
+  <p>No parts have been added, yet.</p>
+<% end %>
 
 <%= link_to "Add a part", new_project_part_path(@project) %>

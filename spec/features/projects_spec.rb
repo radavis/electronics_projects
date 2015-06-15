@@ -15,4 +15,14 @@ feature "projects" do
     click_button "Add"
     expect(page).to have_content("New Project Added.")
   end
+
+  scenario "user views bill of material on project page" do
+    project = create(:project_with_parts)
+
+    visit project_path(project)
+    project.parts.each do |part|
+      expect(page).to have_link(part.part_number, href: part_path(part))
+      expect(page).to have_content(part.name)
+    end
+  end
 end

@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <tr>
+      <th>Part Number</th>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% parts.each do |part| %>
+      <tr>
+        <td><%= part.part_number %></td>
+        <td><%= link_to part.name, part_path(part) %></td>
+        <td><%= truncate(part.description) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

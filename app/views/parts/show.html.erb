@@ -1,0 +1,10 @@
+<table>
+  <tbody>
+    <% Part.column_names.each do |column| %>
+      <tr>
+        <td><%= column.titleize %>:</td>
+        <td><%= @part.send(column) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

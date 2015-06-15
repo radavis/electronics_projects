@@ -14,6 +14,10 @@ class PartsController < ApplicationController
     end
   end
 
+  def show
+    @part = Part.find(params[:id])
+  end
+
   private
   def part_params
     params.require(:part).permit(

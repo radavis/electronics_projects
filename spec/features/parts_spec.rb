@@ -10,7 +10,8 @@ feature "parts" do
     fill_in "Name", with: "Atmel ATTiny85"
     fill_in "Description",
       with: "High Performance, Low Power AVR 8-bit Microconrtoller"
-    fill_in "Datasheet URL", with: "https://atmel.com/attiny.pdf"
+    fill_in "Datasheet URL",
+      with: "http://www.atmel.com/images/atmel-2586-avr-8-bit-microcontroller-attiny25-attiny45-attiny85_datasheet.pdf"
     click_button "Add"
     expect(page).to have_content("New Part Added.")
   end
